@@ -1,0 +1,105 @@
+# ──────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# ──────────────────────────────────────────────
+# Virtual environments
+# ──────────────────────────────────────────────
+.venv*
+venv/
+env/
+
+# ──────────────────────────────────────────────
+# Secrets / environment
+# ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ──────────────────────────────────────────────
+# OS / editor junk
+# ──────────────────────────────────────────────
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# ──────────────────────────────────────────────
+# Databases / local persisted state (real user data)
+# ──────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+billing_store.json
+.memory/
+
+# ──────────────────────────────────────────────
+# Runtime data / generated artifacts
+# ──────────────────────────────────────────────
+data/
+uploads/
+downloads/
+cache/
+_media/
+media/
+logs/
+*.log
+
+# ──────────────────────────────────────────────
+# Media blobs
+# ──────────────────────────────────────────────
+*.mp4
+*.mov
+*.wav
+*.mp3
+
+# ──────────────────────────────────────────────
+# Backups / scratch copies
+# ──────────────────────────────────────────────
+*.bak
+*.bak[0-9]*
+*.bak.*
+
+# ──────────────────────────────────────────────
+# Misc (this is a Python project, not Node)
+# ──────────────────────────────────────────────
+package-lock.json
+adu_evolution_memory.json
+adu_self_upgrade_sessions.json
+
+# GPTsora source publication: generated dependencies and device-local settings
+node_modules/
+Pods/
+DerivedData/
+build/
+dist/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.mobileprovision
+*.p12
+*.p8
+*.db-wal
+*.db-shm
+*.sqlite-wal
+*.sqlite-shm
+
+# Explicit, reviewed source inputs that override historical blanket ignores
+!/chatagi_adu_web_frontend/package-lock.json
+!/_media/
+/_media/*
+!/_media/realtime_native_poc.html
+!/GPTsora/**/*.mp4
+*.env
+GoogleService-Info.plist
+.venv/

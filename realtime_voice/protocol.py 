@@ -1,0 +1,44 @@
+"""
+protocol.py — 统一事件协议
+所有模块之间通信用这套事件
+"""
+
+from dataclasses import dataclass
+from enum import Enum
+
+
+class EventType:
+    # 上行（用户 -> 服务器）
+    AUDIO_IN_CHUNK        = "audio_in_chunk"
+    USER_SPEAKING_START   = "user_speaking_start"
+    USER_SPEAKING_STOP    = "user_speaking_stop"
+    INTERRUPT             = "interrupt"
+
+    # 下行（服务器 -> 用户）
+    ASSISTANT_TEXT_DELTA  = "assistant_text_delta"
+    ASSISTANT_AUDIO_CHUNK = "assistant_audio_chunk"
+    ASSISTANT_DONE        = "assistant_done"
+    SESSION_READY         = "session_ready"
+    ERROR                 = "error"
+
+
+class SessionMode(str, Enum):
+    IDLE        = "idle"
+    LISTENING   = "listening"
+    THINKING    = "thinking"
+    SPEAKING    = "speaking"
+    INTERRUPTED = "interrupted"
+
+
+@dataclass
+class AudioChunk:
+    data: bytes
+    sample_rate: int = 16000
+    channels: int = 1
+
+
+@dataclass
+class AudioOutputChunk:
+    data: bytes
+    seq: int = 0
+    is_final: bool = False

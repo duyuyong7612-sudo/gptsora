@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""
+test_mac_ax.py
+==============
+测试 6 个 macOS AX 工具,不依赖 FastAPI 后端,直接跑。
+
+用法:
+    cd ~/Desktop/backend
+    python3 test_mac_ax.py
+
+第一次运行时,macOS 会弹窗请求"辅助功能"权限。
+路径:系统设置 → 隐私与安全 → 辅助功能 → 给 Terminal(或 Python)打勾。~/Downloads/02_test_mac_ax.py
+
+成功标志:
+- 列出当前运行的 app 数量
+- 激活 Finder
+- 读取 Finder 的 UI 元素
+- 不出现 "missing value" 全屏(说明权限和 AX 路径都通了)
+"""
+
+import asyncio
+import sys
+import os
+
+# 让 import 找到 adu_computer_tools.py
+sys.path.insert(0, os.path.expanduser("~/Desktop/backend"))
+
+from adu_computer_tools import dispatch_tool, TOOL_REGISTRY
+
+
+async def main():
+    print("=" * 60)
+    print("阿杜 macOS AX 工具自检")
+    print("=" * 60)
+
+    # 0) 工具注册检查
+    mac_tools = [k for k in TOOL_REGISTRY.keys() if k.startswith("mac_")]
+    print(f"\n[0] 已注册的 mac_* 工具: {len(mac_tools)} 个")
+    for t in mac_tools:
+        print(f"    - {t}")
+
+    if len(mac_tools) < 6:
+        print("\n❌ 工具未全部注册!请检查 adu_computer_tools.py 末尾是否成功 append 了 patch。")
+        return
+
+    # 1) 列出运行中的 app
+    print("\n[1] 测试 mac_list_apps...")
+    res = await dispatch_tool("mac_list_apps", {})
+    if not res.get("ok"):
+        print(f"    ❌ 失败: {res.get('error')}")
+        if "权限" in str(res.get("error", "")) or "not authorized" in str(res.get("error", "")).lower():
+            print("\n   💡 解决:系统设置 → 隐私与安全 → 辅助功能 → 给 Terminal 打勾")
+        return
+    apps = res.get("apps", [])
+    print(f"    ✅ 当前运行 {len(apps)} 个 app")
+    print(f"    前 8 个: {apps[:8]}")
+
+    # 2) 激活 Finder(系统自带,一定有)
+    print("\n[2] 测试 mac_activate_app(Finder)...")
+    res = await dispatch_tool("mac_activate_app", {"app": "Finder"})
+    if res.get("ok"):
+        print(f"    ✅ {res.get('action')}")
+    else:
+        print(f"    ❌ 失败: {res.get('error')}")
+        return
+
+    await asyncio.sleep(0.5)
+
+    # 3) 读 Finder 的 UI 元素
+    print("\n[3] 测试 mac_get_ui_elements(Finder, depth=2)...")
+    res = await dispatch_tool("mac_get_ui_elements", {"app": "Finder", "max_depth": 2, "max_elements": 20})
+    if not res.get("ok"):
+        print(f"    ❌ 失败: {res.get('error')}")
+        return
+    elements = res.get("elements", [])
+    print(f"    ✅ 拿到 {len(elements)} 个元素(取前 8 个展示):")
+    for e in elements[:8]:
+        role = e.get("role", "?")
+        name = e.get("name", "?")
+        print(f"       [{role}] name={name}")
+
+    has_real_name = any(
+        e.get("name") and e["name"] not in ("missing value", "(no name)", "")
+        for e in elements
+    )
+    if not has_real_name:
+        print("\n    ⚠️  所有元素 name 都是空/missing value")
+        print("       说明 macOS 没有返回真正的 AX 树。可能原因:")
+        print("       1) Terminal/Python 没有'辅助功能'权限")
+        print("       2) Finder 当前没有打开任何窗口(去 Finder 打开个文件夹)")
+    else:
+        print(f"\n    ✅ 拿到了真实的元素名,AX 树通了!")
+
+    # 4) 测试一个无害的按键(只是按一下 escape)
+    print("\n[4] 测试 mac_press_key(escape)...")
+    res = await dispatch_tool("mac_press_key", {"key": "escape"})
+    if res.get("ok"):
+        print(f"    ✅ {res.get('result')}")
+    else:
+        print(f"    ❌ 失败: {res.get('error')}")
+
+    print("\n" + "=" * 60)
+    print("✅ 全部基础测试完成!")
+    print("=" * 60)
+    print("\n下一步:")
+    print("- 重启后端: 工具会自动通过 /agent/tool 暴露给 GPT/Claude/语音")
+    print("- iOS 端不用改任何东西")
+    print("- 在对话里说'帮我打开微信',AI 应该会自动调用 mac_activate_app")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

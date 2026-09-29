@@ -1,0 +1,18 @@
+# GPTsora source provenance (metadata only; existing notices retained)
+# Source-ID: "gptsora-f3f062ab56e82693d2313313157c70b40b9cb8e972708633aa5f5c46f06f4df9"
+# Source-SHA256: "70ee873919c861133542c18040f2d6e9214e9b87f136fd55c8ad703554efc3c8"
+# Owner: "YUYONG DU"
+# License-Reference: "LicenseRef-GPTsora-Noncommercial-1.0; see LICENSE"
+# Release-ID: "gptsora-source-2026-09-25"
+platform :ios, '16.0'
+
+target 'GPT Solara' do
+  use_frameworks!
+
+  # WebRTC
+  pod 'GoogleWebRTC', '1.1.32000'
+
+  target 'GPT SolaraTests' do
+    inherit! :search_paths
+  end
+end

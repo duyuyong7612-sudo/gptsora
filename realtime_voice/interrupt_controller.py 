@@ -1,0 +1,56 @@
+"""
+interrupt_controller.py — 打断控制
+用户开口 -> 立刻停止播放和生成
+"""
+
+import logging
+from protocol import SessionMode
+
+log = logging.getLogger("interrupt")
+
+
+class InterruptController:
+
+    async def handle_barge_in(self, session, send_fn):
+        """
+        用户抢话时调用
+        1. 取消LLM和TTS任务
+        2. 通知前端清空播放队列
+        3. 切换状态到 listening
+        """
+        if session.mode not in (SessionMode.THINKING, SessionMode.SPEAKING):
+            return
+
+        log.info(f"[Interrupt] session={session.id} 用户打断")
+
+        # 标记中断
+        session.interrupted = True
+
+        # 取消任务
+        session.cancel_tasks()
+
+        # 通知前端清空音频
+        await send_fn({
+            "type": "interrupt",
+            "session_id": session.id
+        })
+
+        # 切换状态
+        session.mode = SessionMode.LISTENING
+        session.reset()
+
+        log.info(f"[Interrupt] ✅ 已切换到 listening")
+
+    async def handle_vad_start(self, session, send_fn):
+        """VAD 检测到用户开始说话"""
+        if session.mode == SessionMode.SPEAKING:
+            await self.handle_barge_in(session, send_fn)
+        else:
+            session.mode = SessionMode.LISTENING
+
+    async def handle_vad_stop(self, session):
+        """VAD 检测到用户停止说话，可以开始思考了"""
+        if session.mode == SessionMode.LISTENING:
+            session.mode = SessionMode.THINKING
+            return True
+        return False

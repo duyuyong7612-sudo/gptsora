@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AGENT_API_TOKEN</key>
+	<string>$(AGENT_API_TOKEN)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>ChatAGI 需要使用摄像头进行视觉感知和视频通话。</string>
+	<key>NSContactsUsageDescription</key>
+	<string>ChatAGI 需要访问联系人用于选择联系人和发起通讯相关功能。</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>ChatAGI 需要连接同一局域网内的阿杜实时语音后端。</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>ChatAGI 需要使用当前位置来进行导航、感知和本地服务。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>ChatAGI 需要使用麦克风进行语音通话。</string>
+</dict>
+</plist>

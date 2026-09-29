@@ -1,0 +1,33 @@
+{
+  "version" : 1,
+  "products" : [
+    {
+      "id" : "solara_pro_weekly_799",
+      "type" : "auto-renewable-subscription",
+      "displayName" : "Solara Pro Weekly",
+      "description" : "Unlock real-time voice (100 min/week), priority processing, video generation, saving and sharing.",
+      "price" : 7.99,
+      "subscription" : {
+        "period" : {
+          "unit" : "week",
+          "value" : 1
+        },
+        "group" : "solara_pro_group"
+      }
+    },
+    {
+      "id" : "solara_video_pack_5",
+      "type" : "consumable",
+      "displayName" : "Video Pack (5)",
+      "description" : "Add 5 video generation credits.",
+      "price" : 7.99
+    },
+    {
+      "id" : "solara_video_pack_10",
+      "type" : "consumable",
+      "displayName" : "Video Pack (10)",
+      "description" : "Add 10 video generation credits.",
+      "price" : 14.99
+    }
+  ]
+}

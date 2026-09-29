@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+requests
+aiofiles
+pydantic
+python-dotenv
+openai>=1.0.0
+Pillow
+httpx
+websockets>=12.0,<14
+aiortc>=1.9
+# Apple Sign In identity_token verification
+PyJWT[crypto]>=2.8.0
+livekit-api>=0.8.0

@@ -1,0 +1,1010 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		126D0FFD1CD550850CD99C17 /* Pods_GPT_Solara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF09528552325568DAF8BC7 /* Pods_GPT_Solara.framework */; };
+		48047FA32F99747E007F8E63 /* ComputerTaskCenterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48047FA22F99747E007F8E63 /* ComputerTaskCenterClient.swift */; };
+		48047FA52F99753E007F8E63 /* ComputerTaskPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48047FA42F99753E007F8E63 /* ComputerTaskPanelView.swift */; };
+		482780922F20087200959308 /* SolaraAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482780912F20087200959308 /* SolaraAPIClient.swift */; };
+		4827A8492FB0E4DB007F48B4 /* BrainStatusPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827A8482FB0E4DB007F48B4 /* BrainStatusPanelView.swift */; };
+		484305F72F0510A400EEC413 /* RemixComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484305F62F0510A400EEC413 /* RemixComposerView.swift */; };
+		484305FB2F0515E800EEC413 /* RemixVideoPickerGridSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484305FA2F0515E800EEC413 /* RemixVideoPickerGridSheet.swift */; };
+		484306012F08F4C700EEC413 /* StudioShellView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 484306002F08F4C700EEC413 /* StudioShellView.swift .swift */; };
+		484EC2702F08FE88006E764F /* 5ContentView_JobsUI .swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EC26F2F08FE88006E764F /* 5ContentView_JobsUI .swift */; };
+		484EC27A2F0AC086006E764F /* RealtimeAVCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EC2792F0AC086006E764F /* RealtimeAVCallView.swift */; };
+		484EC27C2F0AC13C006E764F /* RealtimeBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EC27B2F0AC13C006E764F /* RealtimeBridge.swift */; };
+		484EC2802F1249EA006E764F /* HomeAutomationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EC27F2F1249EA006E764F /* HomeAutomationModule.swift */; };
+		484EC2822F149EA8006E764F /* RealtimeFastLane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EC2812F149EA8006E764F /* RealtimeFastLane.swift */; };
+		48581A012F90572200EA0E14 /* ScreenAgentTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48581A002F90572200EA0E14 /* ScreenAgentTools.swift */; };
+		48581A032F90578900EA0E14 /* ScreenAgentInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48581A022F90578800EA0E14 /* ScreenAgentInstructions.swift */; };
+		48581A052F905EFA00EA0E14 /* ScreenAgentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48581A042F905EFA00EA0E14 /* ScreenAgentView.swift */; };
+		489F3AEE2F2BC2F3004E64C3 /* Homechatview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F3AED2F2BC2F3004E64C3 /* Homechatview.swift */; };
+		489F3AF22F307EF1004E64C3 /* GPT5ChatService+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F3AF12F307EF1004E64C3 /* GPT5ChatService+Streaming.swift */; };
+		489F3AF82F33079E004E64C3 /* ChatPlusFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489F3AF72F33079E004E64C3 /* ChatPlusFeature.swift */; };
+		48A414862F92221C00C89A27 /* ScreenStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A414852F92221C00C89A27 /* ScreenStreamView.swift */; };
+		48A414882F922BE900C89A27 /* MacControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A414872F922BE900C89A27 /* MacControlView.swift */; };
+		48A5C2AA2F752F5800F9B42F /*  AduPerceptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C2A92F752F5800F9B42F /*  AduPerceptionManager.swift */; };
+		48A5C2AC2F7539D800F9B42F /* AduPerceptionBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C2AB2F7539D800F9B42F /* AduPerceptionBootstrap.swift */; };
+		48A645792F8B846100164A34 /* AduVoiceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A645782F8B846100164A34 /* AduVoiceService.swift */; };
+		48A645832F9010D600164A34 /* WeChat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48A645822F9010D600164A34 /* WeChat.txt */; };
+		48A645852F9010D600164A34 /* WeChat 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48A645842F9010D600164A34 /* WeChat 2.txt */; };
+		48A645872F9055FE00164A34 /* ScreenAgentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A645862F9055FE00164A34 /* ScreenAgentSession.swift */; };
+		48A645892F90565900164A34 /* ScreenAgentAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A645882F90565900164A34 /* ScreenAgentAudio.swift */; };
+		48A8F95F2F9D928500583243 /* SemanticInterruptLabService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8F95E2F9D928500583243 /* SemanticInterruptLabService.swift */; };
+		48A8F9612F9D931D00583243 /* SemanticInterruptLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8F9602F9D931D00583243 /* SemanticInterruptLabView.swift */; };
+		48A8F9E52F48055200659560 /* MP3StreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8F9E42F48055200659560 /* MP3StreamPlayer.swift */; };
+		48A8F9F02F5AC47800659560 /* AIVisionNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A8F9EF2F5AC47800659560 /* AIVisionNavView.swift */; };
+		48AA9C4E2F78F40E00CCCA25 /* VoiceprintGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA9C4D2F78F40E00CCCA25 /* VoiceprintGate.swift */; };
+		48AA9C522F7FA77200CCCA25 /* MacAgentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA9C512F7FA77200CCCA25 /* MacAgentSection.swift */; };
+		48AA9C542F80F12F00CCCA25 /* AduWorkReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA9C532F80F12F00CCCA25 /* AduWorkReportView.swift */; };
+		48AA9C562F80FE5100CCCA25 /* AduDelegateView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA9C552F80FE5100CCCA25 /* AduDelegateView.swift .swift */; };
+		48AA9C582F8232EB00CCCA25 /* VoiceCloneView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA9C572F8232EB00CCCA25 /* VoiceCloneView.swift .swift */; };
+		48B366AC2F6D149F005A866A /* iPhoneAgentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B366AB2F6D149F005A866A /* iPhoneAgentService.swift */; };
+		48B366AE2F6D14DF005A866A /* iPhoneAgentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B366AD2F6D14DF005A866A /* iPhoneAgentView.swift */; };
+		48C124F12EDB8086004FB3FE /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C124E72EDB8086004FB3FE /* AppConfig.swift */; };
+		48C125B82EE14216004FB3FE /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125A12EE14216004FB3FE /* WelcomePage.swift */; };
+		48C125B92EE14216004FB3FE /* RootPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125962EE14216004FB3FE /* RootPagerView.swift */; };
+		48C125BA2EE14216004FB3FE /* SoraVideoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C1259F2EE14216004FB3FE /* SoraVideoApp.swift */; };
+		48C125BB2EE14216004FB3FE /* SoraVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125A02EE14216004FB3FE /* SoraVideoService.swift */; };
+		48C125BC2EE14216004FB3FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C1258F2EE14216004FB3FE /* ContentView.swift */; };
+		48C125BE2EE14216004FB3FE /* RealtimeQuickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125952EE14216004FB3FE /* RealtimeQuickService.swift */; };
+		48C125E72EE203D8004FB3FE /* 2demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C125E62EE203D8004FB3FE /* 2demo_sample.mp4 */; };
+		48C125ED2EE22B04004FB3FE /* AboutSoraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125EC2EE22B04004FB3FE /* AboutSoraView.swift */; };
+		48C125EF2EE240A4004FB3FE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C125EE2EE240A4004FB3FE /* Media.xcassets */; };
+		48C125F42EE2B4EB004FB3FE /* VideoLibraryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125F32EE2B4EB004FB3FE /* VideoLibraryStore.swift */; };
+		48C125F62EE2B5D6004FB3FE /* VideoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125F52EE2B5D6004FB3FE /* VideoLibraryView.swift */; };
+		48C125F82EE3DADD004FB3FE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125F72EE3DADD004FB3FE /* AuthService.swift */; };
+		48C125FA2EE3DB66004FB3FE /* AuthRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C125F92EE3DB66004FB3FE /* AuthRootView.swift */; };
+		48C126002EE4A5D0004FB3FE /* 6demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C125FF2EE4A5D0004FB3FE /* 6demo_sample.mp4 */; };
+		48C126022EE4A5F9004FB3FE /* 7demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C126012EE4A5F9004FB3FE /* 7demo_sample.mp4 */; };
+		48C126042EE4A61B004FB3FE /* 8demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C126032EE4A61B004FB3FE /* 8demo_sample.mp4 */; };
+		48C126062EE4A633004FB3FE /* 9demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C126052EE4A633004FB3FE /* 9demo_sample.mp4 */; };
+		48C126082EE4A65A004FB3FE /* 10demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C126072EE4A65A004FB3FE /* 10demo_sample.mp4 */; };
+		48C1260A2EE4A677004FB3FE /* 11demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48C126092EE4A677004FB3FE /* 11demo_sample.mp4 */; };
+		48C126172EE67D5E004FB3FE /* SolaraChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C126162EE67D5E004FB3FE /* SolaraChatService.swift */; };
+		48E23EB22EEC8E75007E47EA /* UserErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EB12EEC8E75007E47EA /* UserErrorMessage.swift */; };
+		48E23EBA2EED3113007E47EA /* DemoSamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EB92EED3113007E47EA /* DemoSamplePage.swift */; };
+		48E23EC92EEDED54007E47EA /* 14demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23EC82EEDED54007E47EA /* 14demo_sample.mp4 */; };
+		48E23ECD2EEDEEB5007E47EA /* 16demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ECC2EEDEEB5007E47EA /* 16demo_sample.mp4 */; };
+		48E23ECF2EEDEF2A007E47EA /* 17demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ECE2EEDEF2A007E47EA /* 17demo_sample.mp4 */; };
+		48E23ED12EEDEF8B007E47EA /* 18demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ED02EEDEF8B007E47EA /* 18demo_sample.mp4 */; };
+		48E23ED32EEDEFEB007E47EA /* 19demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ED22EEDEFEB007E47EA /* 19demo_sample.mp4 */; };
+		48E23ED72EEDF317007E47EA /* 21demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ED62EEDF317007E47EA /* 21demo_sample.mp4 */; };
+		48E23ED92EEDF36C007E47EA /* 22demo_sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48E23ED82EEDF36C007E47EA /* 22demo_sample.mp4 */; };
+		48E23EDB2EEE1113007E47EA /* VideoJobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EDA2EEE1113007E47EA /* VideoJobManager.swift */; };
+		48E23EDD2EEE2CF6007E47EA /* SolaraFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EDC2EEE2CF6007E47EA /* SolaraFileUtils.swift */; };
+		48E23EEA2EF2140A007E47EA /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EE92EF2140A007E47EA /* IAPManager.swift */; };
+		48E23EEC2EF2652F007E47EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E23EEB2EF2652F007E47EA /* StoreKit.framework */; };
+		48E23EEE2EF297F6007E47EA /* Solara in Resources */ = {isa = PBXBuildFile; fileRef = 48E23EED2EF297F6007E47EA /* Solara */; };
+		48E23EF02EF3737B007E47EA /* PhotoSaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EEF2EF3737B007E47EA /* PhotoSaveService.swift */; };
+		48E23EF92EF5C7A9007E47EA /* ReceiptParser in Frameworks */ = {isa = PBXBuildFile; productRef = 48E23EF82EF5C7A9007E47EA /* ReceiptParser */; };
+		48E23EFB2EF5C7A9007E47EA /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 48E23EFA2EF5C7A9007E47EA /* RevenueCat */; };
+		48E23EFD2EF5C7A9007E47EA /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = 48E23EFC2EF5C7A9007E47EA /* RevenueCatUI */; };
+		48E23EFF2EF72EE8007E47EA /* 1ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23EFE2EF72EE8007E47EA /* 1ContentView.swift */; };
+		48E23F012EF72F8B007E47EA /* 2ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F002EF72F8B007E47EA /* 2ContentView.swift */; };
+		48E23F032EF7523B007E47EA /* 3ContentView_UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F022EF7523B007E47EA /* 3ContentView_UIComponents.swift */; };
+		48E23F052EF752B0007E47EA /* 4ContentView_PlayerFullscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F042EF752B0007E47EA /* 4ContentView_PlayerFullscreenView.swift */; };
+		48E23F0B2EF8C7E1007E47EA /* BillingKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F0A2EF8C7E1007E47EA /* BillingKit.swift */; };
+		48E23F102F034A97007E47EA /* RemixRealtimeBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F0F2F034A97007E47EA /* RemixRealtimeBridge.swift */; };
+		48E23F122F036469007E47EA /* RemixSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F112F036469007E47EA /* RemixSheetView.swift */; };
+		48E23F142F03650B007E47EA /* RemixFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E23F132F03650B007E47EA /* RemixFlowController.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* UnifiedTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5D /* UnifiedTaskService.swift */; };
+		BD1234567890ABCDEF00AD01 /* AduTaskPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00AD02 /* AduTaskPlanner.swift */; };
+		BD1234567890ABCDEF00BD01 /* ComputerControlHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00BD02 /* ComputerControlHomeView.swift */; };
+		BD1234567890ABCDEF00CA01 /* CodexAgentClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00CA02 /* CodexAgentClient.swift */; };
+		BD1234567890ABCDEF00CB01 /* ComputerBodyDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00CB02 /* ComputerBodyDebugView.swift */; };
+		BD1234567890ABCDEF00CS01 /* AduContextStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00CS02 /* AduContextStore.swift */; };
+		BD1234567890ABCDEF00EA01 /* EngineeringAgentPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00EA02 /* EngineeringAgentPanel.swift */; };
+		BD1234567890ABCDEF00SU01 /* AduSelfUpgradeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1234567890ABCDEF00SU02 /* AduSelfUpgradeClient.swift */; };
+		BD2026092500000000000001 /* GPT_SolaraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2026092500000000000002 /* GPT_SolaraTests.swift */; };
+		CF579707F9BD29DBDB73B833 /* ComputerControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB0B97CE1662C1FEE8BDB0 /* ComputerControlPanel.swift */; };
+		F78E8998A7CA2E44713FD12E /* Pods_GPT_SolaraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5C7C67BACA04AAA8937BB3 /* Pods_GPT_SolaraTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48E23EC32EED44CB007E47EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481216532ED642EF001D7D42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4812165A2ED642EF001D7D42;
+			remoteInfo = "GPT Solara";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48047FA22F99747E007F8E63 /* ComputerTaskCenterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerTaskCenterClient.swift; sourceTree = "<group>"; };
+		48047FA42F99753E007F8E63 /* ComputerTaskPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerTaskPanelView.swift; sourceTree = "<group>"; };
+		4812165B2ED642EF001D7D42 /* GPT Solara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GPT Solara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		482780912F20087200959308 /* SolaraAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolaraAPIClient.swift; sourceTree = "<group>"; };
+		4827A8482FB0E4DB007F48B4 /* BrainStatusPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainStatusPanelView.swift; sourceTree = "<group>"; };
+		484305F62F0510A400EEC413 /* RemixComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemixComposerView.swift; sourceTree = "<group>"; };
+		484305FA2F0515E800EEC413 /* RemixVideoPickerGridSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemixVideoPickerGridSheet.swift; sourceTree = "<group>"; };
+		484306002F08F4C700EEC413 /* StudioShellView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StudioShellView.swift .swift"; sourceTree = "<group>"; };
+		484EC26F2F08FE88006E764F /* 5ContentView_JobsUI .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "5ContentView_JobsUI .swift"; sourceTree = "<group>"; };
+		484EC2792F0AC086006E764F /* RealtimeAVCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeAVCallView.swift; sourceTree = "<group>"; };
+		484EC27B2F0AC13C006E764F /* RealtimeBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeBridge.swift; sourceTree = "<group>"; };
+		484EC27F2F1249EA006E764F /* HomeAutomationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAutomationModule.swift; sourceTree = "<group>"; };
+		484EC2812F149EA8006E764F /* RealtimeFastLane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeFastLane.swift; sourceTree = "<group>"; };
+		48581A002F90572200EA0E14 /* ScreenAgentTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAgentTools.swift; sourceTree = "<group>"; };
+		48581A022F90578800EA0E14 /* ScreenAgentInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAgentInstructions.swift; sourceTree = "<group>"; };
+		48581A042F905EFA00EA0E14 /* ScreenAgentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAgentView.swift; sourceTree = "<group>"; };
+		489F3AED2F2BC2F3004E64C3 /* Homechatview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homechatview.swift; sourceTree = "<group>"; };
+		489F3AF12F307EF1004E64C3 /* GPT5ChatService+Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPT5ChatService+Streaming.swift"; sourceTree = "<group>"; };
+		489F3AF72F33079E004E64C3 /* ChatPlusFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPlusFeature.swift; sourceTree = "<group>"; };
+		48A414852F92221C00C89A27 /* ScreenStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStreamView.swift; sourceTree = "<group>"; };
+		48A414872F922BE900C89A27 /* MacControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacControlView.swift; sourceTree = "<group>"; };
+		48A5C2A92F752F5800F9B42F /*  AduPerceptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AduPerceptionManager.swift"; sourceTree = "<group>"; };
+		48A5C2AB2F7539D800F9B42F /* AduPerceptionBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AduPerceptionBootstrap.swift; sourceTree = "<group>"; };
+		48A645782F8B846100164A34 /* AduVoiceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AduVoiceService.swift; sourceTree = SOURCE_ROOT; };
+		48A645822F9010D600164A34 /* WeChat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeChat.txt; sourceTree = "<group>"; };
+		48A645842F9010D600164A34 /* WeChat 2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "WeChat 2.txt"; sourceTree = "<group>"; };
+		48A645862F9055FE00164A34 /* ScreenAgentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAgentSession.swift; sourceTree = "<group>"; };
+		48A645882F90565900164A34 /* ScreenAgentAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenAgentAudio.swift; sourceTree = "<group>"; };
+		48A8F95E2F9D928500583243 /* SemanticInterruptLabService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticInterruptLabService.swift; sourceTree = "<group>"; };
+		48A8F9602F9D931D00583243 /* SemanticInterruptLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticInterruptLabView.swift; sourceTree = "<group>"; };
+		48A8F9E42F48055200659560 /* MP3StreamPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP3StreamPlayer.swift; sourceTree = "<group>"; };
+		48A8F9EF2F5AC47800659560 /* AIVisionNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIVisionNavView.swift; sourceTree = "<group>"; };
+		48AA9C4D2F78F40E00CCCA25 /* VoiceprintGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceprintGate.swift; sourceTree = "<group>"; };
+		48AA9C512F7FA77200CCCA25 /* MacAgentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAgentSection.swift; sourceTree = "<group>"; };
+		48AA9C532F80F12F00CCCA25 /* AduWorkReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AduWorkReportView.swift; sourceTree = "<group>"; };
+		48AA9C552F80FE5100CCCA25 /* AduDelegateView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AduDelegateView.swift .swift"; sourceTree = "<group>"; };
+		48AA9C572F8232EB00CCCA25 /* VoiceCloneView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceCloneView.swift .swift"; sourceTree = "<group>"; };
+		48B366AB2F6D149F005A866A /* iPhoneAgentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAgentService.swift; sourceTree = "<group>"; };
+		48B366AD2F6D14DF005A866A /* iPhoneAgentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAgentView.swift; sourceTree = "<group>"; };
+		48C124E72EDB8086004FB3FE /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		48C1258F2EE14216004FB3FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48C125932EE14216004FB3FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48C125952EE14216004FB3FE /* RealtimeQuickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeQuickService.swift; sourceTree = "<group>"; };
+		48C125962EE14216004FB3FE /* RootPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPagerView.swift; sourceTree = "<group>"; };
+		48C1259F2EE14216004FB3FE /* SoraVideoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoraVideoApp.swift; sourceTree = "<group>"; };
+		48C125A02EE14216004FB3FE /* SoraVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoraVideoService.swift; sourceTree = "<group>"; };
+		48C125A12EE14216004FB3FE /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		48C125E62EE203D8004FB3FE /* 2demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2demo_sample.mp4; sourceTree = "<group>"; };
+		48C125EC2EE22B04004FB3FE /* AboutSoraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSoraView.swift; sourceTree = "<group>"; };
+		48C125EE2EE240A4004FB3FE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		48C125F32EE2B4EB004FB3FE /* VideoLibraryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryStore.swift; sourceTree = "<group>"; };
+		48C125F52EE2B5D6004FB3FE /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
+		48C125F72EE3DADD004FB3FE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		48C125F92EE3DB66004FB3FE /* AuthRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRootView.swift; sourceTree = "<group>"; };
+		48C125FF2EE4A5D0004FB3FE /* 6demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6demo_sample.mp4; sourceTree = "<group>"; };
+		48C126012EE4A5F9004FB3FE /* 7demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7demo_sample.mp4; sourceTree = "<group>"; };
+		48C126032EE4A61B004FB3FE /* 8demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8demo_sample.mp4; sourceTree = "<group>"; };
+		48C126052EE4A633004FB3FE /* 9demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9demo_sample.mp4; sourceTree = "<group>"; };
+		48C126072EE4A65A004FB3FE /* 10demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10demo_sample.mp4; sourceTree = "<group>"; };
+		48C126092EE4A677004FB3FE /* 11demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11demo_sample.mp4; sourceTree = "<group>"; };
+		48C126162EE67D5E004FB3FE /* SolaraChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolaraChatService.swift; sourceTree = "<group>"; };
+		48E23EB12EEC8E75007E47EA /* UserErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserErrorMessage.swift; sourceTree = "<group>"; };
+		48E23EB92EED3113007E47EA /* DemoSamplePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSamplePage.swift; sourceTree = "<group>"; };
+		48E23EBF2EED44CB007E47EA /* GPT SolaraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GPT SolaraTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E23EC82EEDED54007E47EA /* 14demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 14demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ECC2EEDEEB5007E47EA /* 16demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 16demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ECE2EEDEF2A007E47EA /* 17demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 17demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ED02EEDEF8B007E47EA /* 18demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 18demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ED22EEDEFEB007E47EA /* 19demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 19demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ED62EEDF317007E47EA /* 21demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 21demo_sample.mp4; sourceTree = "<group>"; };
+		48E23ED82EEDF36C007E47EA /* 22demo_sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 22demo_sample.mp4; sourceTree = "<group>"; };
+		48E23EDA2EEE1113007E47EA /* VideoJobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoJobManager.swift; sourceTree = "<group>"; };
+		48E23EDC2EEE2CF6007E47EA /* SolaraFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolaraFileUtils.swift; sourceTree = "<group>"; };
+		48E23EE82EF140B9007E47EA /* GPT Solara.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GPT Solara.entitlements"; sourceTree = "<group>"; };
+		48E23EE92EF2140A007E47EA /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		48E23EEB2EF2652F007E47EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		48E23EED2EF297F6007E47EA /* Solara */ = {isa = PBXFileReference; lastKnownFileType = text; path = Solara; sourceTree = "<group>"; };
+		48E23EEF2EF3737B007E47EA /* PhotoSaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSaveService.swift; sourceTree = "<group>"; };
+		48E23EFE2EF72EE8007E47EA /* 1ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1ContentView.swift; sourceTree = "<group>"; };
+		48E23F002EF72F8B007E47EA /* 2ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2ContentView.swift; sourceTree = "<group>"; };
+		48E23F022EF7523B007E47EA /* 3ContentView_UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3ContentView_UIComponents.swift; sourceTree = "<group>"; };
+		48E23F042EF752B0007E47EA /* 4ContentView_PlayerFullscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 4ContentView_PlayerFullscreenView.swift; sourceTree = "<group>"; };
+		48E23F0A2EF8C7E1007E47EA /* BillingKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingKit.swift; sourceTree = "<group>"; };
+		48E23F0F2F034A97007E47EA /* RemixRealtimeBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemixRealtimeBridge.swift; sourceTree = "<group>"; };
+		48E23F112F036469007E47EA /* RemixSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemixSheetView.swift; sourceTree = "<group>"; };
+		48E23F132F03650B007E47EA /* RemixFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemixFlowController.swift; sourceTree = "<group>"; };
+		6D5C7C67BACA04AAA8937BB3 /* Pods_GPT_SolaraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPT_SolaraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		850F086F6C7A0CF6F07FA05E /* Pods-GPT Solara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPT Solara.debug.xcconfig"; path = "Target Support Files/Pods-GPT Solara/Pods-GPT Solara.debug.xcconfig"; sourceTree = "<group>"; };
+		8EF09528552325568DAF8BC7 /* Pods_GPT_Solara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPT_Solara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		900611AE85D01D828F9E4310 /* Pods-GPT SolaraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPT SolaraTests.release.xcconfig"; path = "Target Support Files/Pods-GPT SolaraTests/Pods-GPT SolaraTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B5D /* UnifiedTaskService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnifiedTaskService.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00AD02 /* AduTaskPlanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AduTaskPlanner.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00BD02 /* ComputerControlHomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComputerControlHomeView.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00CA02 /* CodexAgentClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CodexAgentClient.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00CB02 /* ComputerBodyDebugView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComputerBodyDebugView.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00CS02 /* AduContextStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AduContextStore.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00EA02 /* EngineeringAgentPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EngineeringAgentPanel.swift; sourceTree = "<group>"; };
+		BD1234567890ABCDEF00SU02 /* AduSelfUpgradeClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AduSelfUpgradeClient.swift; sourceTree = "<group>"; };
+		BD2026092500000000000002 /* GPT_SolaraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPT_SolaraTests.swift; sourceTree = "<group>"; };
+		E1BB0B97CE1662C1FEE8BDB0 /* ComputerControlPanel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ComputerControlPanel.swift; sourceTree = "<group>"; };
+		E491A1646451C50D0D251759 /* Pods-GPT Solara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPT Solara.release.xcconfig"; path = "Target Support Files/Pods-GPT Solara/Pods-GPT Solara.release.xcconfig"; sourceTree = "<group>"; };
+		E823A63DA0FB28449EE9B946 /* Pods-GPT SolaraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPT SolaraTests.debug.xcconfig"; path = "Target Support Files/Pods-GPT SolaraTests/Pods-GPT SolaraTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		48A16FE92FA94F9600457B01 /* New Folder */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			path = "New Folder";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		481216582ED642EF001D7D42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E23EFB2EF5C7A9007E47EA /* RevenueCat in Frameworks */,
+				48E23EF92EF5C7A9007E47EA /* ReceiptParser in Frameworks */,
+				48E23EFD2EF5C7A9007E47EA /* RevenueCatUI in Frameworks */,
+				48E23EEC2EF2652F007E47EA /* StoreKit.framework in Frameworks */,
+				126D0FFD1CD550850CD99C17 /* Pods_GPT_Solara.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48E23EBC2EED44CB007E47EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F78E8998A7CA2E44713FD12E /* Pods_GPT_SolaraTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43308FBDBE49C8FB44ED105B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48E23EEB2EF2652F007E47EA /* StoreKit.framework */,
+				8EF09528552325568DAF8BC7 /* Pods_GPT_Solara.framework */,
+				6D5C7C67BACA04AAA8937BB3 /* Pods_GPT_SolaraTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		481216522ED642EF001D7D42 = {
+			isa = PBXGroup;
+			children = (
+				48E23EE82EF140B9007E47EA /* GPT Solara.entitlements */,
+				48E23EED2EF297F6007E47EA /* Solara */,
+				48C125EE2EE240A4004FB3FE /* Media.xcassets */,
+				4812165C2ED642EF001D7D42 /* Products */,
+				A52B90BC9C214900B4055838 /* Pods */,
+				43308FBDBE49C8FB44ED105B /* Frameworks */,
+				48C125A22EE14216004FB3FE /* GPTsora */,
+				BD2026092500000000000003 /* GPT SolaraTests */,
+			);
+			sourceTree = "<group>";
+		};
+		4812165C2ED642EF001D7D42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4812165B2ED642EF001D7D42 /* GPT Solara.app */,
+				48E23EBF2EED44CB007E47EA /* GPT SolaraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48C125A22EE14216004FB3FE /* GPTsora */ = {
+			isa = PBXGroup;
+			children = (
+				482780912F20087200959308 /* SolaraAPIClient.swift */,
+				48A8F9E42F48055200659560 /* MP3StreamPlayer.swift */,
+				48AA9C4D2F78F40E00CCCA25 /* VoiceprintGate.swift */,
+				48C1258F2EE14216004FB3FE /* ContentView.swift */,
+				48C124E72EDB8086004FB3FE /* AppConfig.swift */,
+				489F3AF72F33079E004E64C3 /* ChatPlusFeature.swift */,
+				489F3AED2F2BC2F3004E64C3 /* Homechatview.swift */,
+				4827A8482FB0E4DB007F48B4 /* BrainStatusPanelView.swift */,
+				48A8F9EF2F5AC47800659560 /* AIVisionNavView.swift */,
+				489F3AF12F307EF1004E64C3 /* GPT5ChatService+Streaming.swift */,
+				48A414872F922BE900C89A27 /* MacControlView.swift */,
+				48047FA22F99747E007F8E63 /* ComputerTaskCenterClient.swift */,
+				48047FA42F99753E007F8E63 /* ComputerTaskPanelView.swift */,
+				48A645862F9055FE00164A34 /* ScreenAgentSession.swift */,
+				48A645882F90565900164A34 /* ScreenAgentAudio.swift */,
+				48581A002F90572200EA0E14 /* ScreenAgentTools.swift */,
+				48581A022F90578800EA0E14 /* ScreenAgentInstructions.swift */,
+				48A414852F92221C00C89A27 /* ScreenStreamView.swift */,
+				48581A042F905EFA00EA0E14 /* ScreenAgentView.swift */,
+				48A645842F9010D600164A34 /* WeChat 2.txt */,
+				48A645822F9010D600164A34 /* WeChat.txt */,
+				48AA9C572F8232EB00CCCA25 /* VoiceCloneView.swift .swift */,
+				48A5C2AB2F7539D800F9B42F /* AduPerceptionBootstrap.swift */,
+				48B366AB2F6D149F005A866A /* iPhoneAgentService.swift */,
+				48B366AD2F6D14DF005A866A /* iPhoneAgentView.swift */,
+				48AA9C512F7FA77200CCCA25 /* MacAgentSection.swift */,
+				484EC2812F149EA8006E764F /* RealtimeFastLane.swift */,
+				484EC27F2F1249EA006E764F /* HomeAutomationModule.swift */,
+				484EC27B2F0AC13C006E764F /* RealtimeBridge.swift */,
+				484EC2792F0AC086006E764F /* RealtimeAVCallView.swift */,
+				48A16FE92FA94F9600457B01 /* New Folder */,
+				48A8F95E2F9D928500583243 /* SemanticInterruptLabService.swift */,
+				48A8F9602F9D931D00583243 /* SemanticInterruptLabView.swift */,
+				48A645782F8B846100164A34 /* AduVoiceService.swift */,
+				48AA9C532F80F12F00CCCA25 /* AduWorkReportView.swift */,
+				48AA9C552F80FE5100CCCA25 /* AduDelegateView.swift .swift */,
+				484306002F08F4C700EEC413 /* StudioShellView.swift .swift */,
+				48E23EDC2EEE2CF6007E47EA /* SolaraFileUtils.swift */,
+				48E23F022EF7523B007E47EA /* 3ContentView_UIComponents.swift */,
+				48E23F042EF752B0007E47EA /* 4ContentView_PlayerFullscreenView.swift */,
+				484EC26F2F08FE88006E764F /* 5ContentView_JobsUI .swift */,
+				48E23EFE2EF72EE8007E47EA /* 1ContentView.swift */,
+				48E23F002EF72F8B007E47EA /* 2ContentView.swift */,
+				48E23F0A2EF8C7E1007E47EA /* BillingKit.swift */,
+				48E23EB12EEC8E75007E47EA /* UserErrorMessage.swift */,
+				48E23EEF2EF3737B007E47EA /* PhotoSaveService.swift */,
+				48C125932EE14216004FB3FE /* Info.plist */,
+				48C125952EE14216004FB3FE /* RealtimeQuickService.swift */,
+				48A5C2A92F752F5800F9B42F /*  AduPerceptionManager.swift */,
+				48E23EDA2EEE1113007E47EA /* VideoJobManager.swift */,
+				48C125E62EE203D8004FB3FE /* 2demo_sample.mp4 */,
+				48C125FF2EE4A5D0004FB3FE /* 6demo_sample.mp4 */,
+				48C126012EE4A5F9004FB3FE /* 7demo_sample.mp4 */,
+				48C126032EE4A61B004FB3FE /* 8demo_sample.mp4 */,
+				48C126072EE4A65A004FB3FE /* 10demo_sample.mp4 */,
+				48C126092EE4A677004FB3FE /* 11demo_sample.mp4 */,
+				48E23EC82EEDED54007E47EA /* 14demo_sample.mp4 */,
+				48C126052EE4A633004FB3FE /* 9demo_sample.mp4 */,
+				48E23ECC2EEDEEB5007E47EA /* 16demo_sample.mp4 */,
+				48E23ECE2EEDEF2A007E47EA /* 17demo_sample.mp4 */,
+				48E23ED02EEDEF8B007E47EA /* 18demo_sample.mp4 */,
+				48E23ED22EEDEFEB007E47EA /* 19demo_sample.mp4 */,
+				48E23ED62EEDF317007E47EA /* 21demo_sample.mp4 */,
+				48E23ED82EEDF36C007E47EA /* 22demo_sample.mp4 */,
+				48C1259F2EE14216004FB3FE /* SoraVideoApp.swift */,
+				48C125962EE14216004FB3FE /* RootPagerView.swift */,
+				484305F62F0510A400EEC413 /* RemixComposerView.swift */,
+				484305FA2F0515E800EEC413 /* RemixVideoPickerGridSheet.swift */,
+				48C125F72EE3DADD004FB3FE /* AuthService.swift */,
+				48C125F92EE3DB66004FB3FE /* AuthRootView.swift */,
+				48E23EE92EF2140A007E47EA /* IAPManager.swift */,
+				48C125A12EE14216004FB3FE /* WelcomePage.swift */,
+				48C125EC2EE22B04004FB3FE /* AboutSoraView.swift */,
+				48E23EB92EED3113007E47EA /* DemoSamplePage.swift */,
+				48C125A02EE14216004FB3FE /* SoraVideoService.swift */,
+				48E23F0F2F034A97007E47EA /* RemixRealtimeBridge.swift */,
+				48C126162EE67D5E004FB3FE /* SolaraChatService.swift */,
+				48C125F32EE2B4EB004FB3FE /* VideoLibraryStore.swift */,
+				48C125F52EE2B5D6004FB3FE /* VideoLibraryView.swift */,
+				48E23F112F036469007E47EA /* RemixSheetView.swift */,
+				48E23F132F03650B007E47EA /* RemixFlowController.swift */,
+				E1BB0B97CE1662C1FEE8BDB0 /* ComputerControlPanel.swift */,
+				A1B2C3D4E5F60718293A4B5D /* UnifiedTaskService.swift */,
+				BD1234567890ABCDEF00BD02 /* ComputerControlHomeView.swift */,
+				BD1234567890ABCDEF00CB02 /* ComputerBodyDebugView.swift */,
+				BD1234567890ABCDEF00AD02 /* AduTaskPlanner.swift */,
+				BD1234567890ABCDEF00CA02 /* CodexAgentClient.swift */,
+				BD1234567890ABCDEF00EA02 /* EngineeringAgentPanel.swift */,
+				BD1234567890ABCDEF00CS02 /* AduContextStore.swift */,
+				BD1234567890ABCDEF00SU02 /* AduSelfUpgradeClient.swift */,
+			);
+			path = GPTsora;
+			sourceTree = "<group>";
+		};
+		A52B90BC9C214900B4055838 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				850F086F6C7A0CF6F07FA05E /* Pods-GPT Solara.debug.xcconfig */,
+				E491A1646451C50D0D251759 /* Pods-GPT Solara.release.xcconfig */,
+				E823A63DA0FB28449EE9B946 /* Pods-GPT SolaraTests.debug.xcconfig */,
+				900611AE85D01D828F9E4310 /* Pods-GPT SolaraTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD2026092500000000000003 /* GPT SolaraTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD2026092500000000000002 /* GPT_SolaraTests.swift */,
+			);
+			path = "GPT SolaraTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4812165A2ED642EF001D7D42 /* GPT Solara */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481216662ED642F0001D7D42 /* Build configuration list for PBXNativeTarget "GPT Solara" */;
+			buildPhases = (
+				CE3E418C791DDF7429E1D366 /* [CP] Check Pods Manifest.lock */,
+				481216572ED642EF001D7D42 /* Sources */,
+				481216582ED642EF001D7D42 /* Frameworks */,
+				481216592ED642EF001D7D42 /* Resources */,
+				AD40FDD71576EFB495DDC6A3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				48A16FE92FA94F9600457B01 /* New Folder */,
+			);
+			name = "GPT Solara";
+			productName = GPTsora;
+			productReference = 4812165B2ED642EF001D7D42 /* GPT Solara.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48E23EBE2EED44CB007E47EA /* GPT SolaraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48E23EC52EED44CB007E47EA /* Build configuration list for PBXNativeTarget "GPT SolaraTests" */;
+			buildPhases = (
+				552CF2FC6C100CE7E143C8F8 /* [CP] Check Pods Manifest.lock */,
+				48E23EBB2EED44CB007E47EA /* Sources */,
+				48E23EBC2EED44CB007E47EA /* Frameworks */,
+				48E23EBD2EED44CB007E47EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48E23EC42EED44CB007E47EA /* PBXTargetDependency */,
+			);
+			name = "GPT SolaraTests";
+			productName = "GPT SolaraTests";
+			productReference = 48E23EBF2EED44CB007E47EA /* GPT SolaraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		481216532ED642EF001D7D42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					4812165A2ED642EF001D7D42 = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+					48E23EBE2EED44CB007E47EA = {
+						CreatedOnToolsVersion = 26.1.1;
+						TestTargetID = 4812165A2ED642EF001D7D42;
+					};
+				};
+			};
+			buildConfigurationList = 481216562ED642EF001D7D42 /* Build configuration list for PBXProject "GPTsora" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 481216522ED642EF001D7D42;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				48E23EF72EF5C7A9007E47EA /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4812165C2ED642EF001D7D42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4812165A2ED642EF001D7D42 /* GPT Solara */,
+				48E23EBE2EED44CB007E47EA /* GPT SolaraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		481216592ED642EF001D7D42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48E23ED32EEDEFEB007E47EA /* 19demo_sample.mp4 in Resources */,
+				48C1260A2EE4A677004FB3FE /* 11demo_sample.mp4 in Resources */,
+				48E23ECD2EEDEEB5007E47EA /* 16demo_sample.mp4 in Resources */,
+				48E23ED12EEDEF8B007E47EA /* 18demo_sample.mp4 in Resources */,
+				48E23EEE2EF297F6007E47EA /* Solara in Resources */,
+				48E23ECF2EEDEF2A007E47EA /* 17demo_sample.mp4 in Resources */,
+				48E23ED92EEDF36C007E47EA /* 22demo_sample.mp4 in Resources */,
+				48A645832F9010D600164A34 /* WeChat.txt in Resources */,
+				48C126002EE4A5D0004FB3FE /* 6demo_sample.mp4 in Resources */,
+				48E23EC92EEDED54007E47EA /* 14demo_sample.mp4 in Resources */,
+				48C125EF2EE240A4004FB3FE /* Media.xcassets in Resources */,
+				48C126042EE4A61B004FB3FE /* 8demo_sample.mp4 in Resources */,
+				48C126082EE4A65A004FB3FE /* 10demo_sample.mp4 in Resources */,
+				48C126062EE4A633004FB3FE /* 9demo_sample.mp4 in Resources */,
+				48E23ED72EEDF317007E47EA /* 21demo_sample.mp4 in Resources */,
+				48C126022EE4A5F9004FB3FE /* 7demo_sample.mp4 in Resources */,
+				48A645852F9010D600164A34 /* WeChat 2.txt in Resources */,
+				48C125E72EE203D8004FB3FE /* 2demo_sample.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48E23EBD2EED44CB007E47EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		552CF2FC6C100CE7E143C8F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPT SolaraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD40FDD71576EFB495DDC6A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPT Solara/Pods-GPT Solara-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GPT Solara/Pods-GPT Solara-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GPT Solara/Pods-GPT Solara-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE3E418C791DDF7429E1D366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPT Solara-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		481216572ED642EF001D7D42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48A8F9F02F5AC47800659560 /* AIVisionNavView.swift in Sources */,
+				484EC2802F1249EA006E764F /* HomeAutomationModule.swift in Sources */,
+				48C125ED2EE22B04004FB3FE /* AboutSoraView.swift in Sources */,
+				482780922F20087200959308 /* SolaraAPIClient.swift in Sources */,
+				4827A8492FB0E4DB007F48B4 /* BrainStatusPanelView.swift in Sources */,
+				48A414882F922BE900C89A27 /* MacControlView.swift in Sources */,
+				48C124F12EDB8086004FB3FE /* AppConfig.swift in Sources */,
+				484305F72F0510A400EEC413 /* RemixComposerView.swift in Sources */,
+				48A645872F9055FE00164A34 /* ScreenAgentSession.swift in Sources */,
+				48C125B82EE14216004FB3FE /* WelcomePage.swift in Sources */,
+				48E23EBA2EED3113007E47EA /* DemoSamplePage.swift in Sources */,
+				48AA9C562F80FE5100CCCA25 /* AduDelegateView.swift .swift in Sources */,
+				48E23F102F034A97007E47EA /* RemixRealtimeBridge.swift in Sources */,
+				48A414862F92221C00C89A27 /* ScreenStreamView.swift in Sources */,
+				48581A032F90578900EA0E14 /* ScreenAgentInstructions.swift in Sources */,
+				48E23F052EF752B0007E47EA /* 4ContentView_PlayerFullscreenView.swift in Sources */,
+				48047FA52F99753E007F8E63 /* ComputerTaskPanelView.swift in Sources */,
+				48E23EFF2EF72EE8007E47EA /* 1ContentView.swift in Sources */,
+				484EC2822F149EA8006E764F /* RealtimeFastLane.swift in Sources */,
+				48C126172EE67D5E004FB3FE /* SolaraChatService.swift in Sources */,
+				48E23EDD2EEE2CF6007E47EA /* SolaraFileUtils.swift in Sources */,
+				48581A052F905EFA00EA0E14 /* ScreenAgentView.swift in Sources */,
+				484EC2702F08FE88006E764F /* 5ContentView_JobsUI .swift in Sources */,
+				48A5C2AA2F752F5800F9B42F /*  AduPerceptionManager.swift in Sources */,
+				48C125B92EE14216004FB3FE /* RootPagerView.swift in Sources */,
+				489F3AEE2F2BC2F3004E64C3 /* Homechatview.swift in Sources */,
+				48E23EEA2EF2140A007E47EA /* IAPManager.swift in Sources */,
+				48047FA32F99747E007F8E63 /* ComputerTaskCenterClient.swift in Sources */,
+				48C125BA2EE14216004FB3FE /* SoraVideoApp.swift in Sources */,
+				48C125F82EE3DADD004FB3FE /* AuthService.swift in Sources */,
+				48AA9C522F7FA77200CCCA25 /* MacAgentSection.swift in Sources */,
+				484306012F08F4C700EEC413 /* StudioShellView.swift .swift in Sources */,
+				48AA9C542F80F12F00CCCA25 /* AduWorkReportView.swift in Sources */,
+				48C125BB2EE14216004FB3FE /* SoraVideoService.swift in Sources */,
+				48C125FA2EE3DB66004FB3FE /* AuthRootView.swift in Sources */,
+				484305FB2F0515E800EEC413 /* RemixVideoPickerGridSheet.swift in Sources */,
+				48B366AC2F6D149F005A866A /* iPhoneAgentService.swift in Sources */,
+				48A8F9612F9D931D00583243 /* SemanticInterruptLabView.swift in Sources */,
+				48581A012F90572200EA0E14 /* ScreenAgentTools.swift in Sources */,
+				48B366AE2F6D14DF005A866A /* iPhoneAgentView.swift in Sources */,
+				48E23F012EF72F8B007E47EA /* 2ContentView.swift in Sources */,
+				48A645892F90565900164A34 /* ScreenAgentAudio.swift in Sources */,
+				48E23EB22EEC8E75007E47EA /* UserErrorMessage.swift in Sources */,
+				484EC27A2F0AC086006E764F /* RealtimeAVCallView.swift in Sources */,
+				489F3AF82F33079E004E64C3 /* ChatPlusFeature.swift in Sources */,
+				48C125BC2EE14216004FB3FE /* ContentView.swift in Sources */,
+				48AA9C582F8232EB00CCCA25 /* VoiceCloneView.swift .swift in Sources */,
+				48E23F0B2EF8C7E1007E47EA /* BillingKit.swift in Sources */,
+				48A645792F8B846100164A34 /* AduVoiceService.swift in Sources */,
+				48A8F9E52F48055200659560 /* MP3StreamPlayer.swift in Sources */,
+				48AA9C4E2F78F40E00CCCA25 /* VoiceprintGate.swift in Sources */,
+				48E23F032EF7523B007E47EA /* 3ContentView_UIComponents.swift in Sources */,
+				48C125F62EE2B5D6004FB3FE /* VideoLibraryView.swift in Sources */,
+				48A5C2AC2F7539D800F9B42F /* AduPerceptionBootstrap.swift in Sources */,
+				48E23F122F036469007E47EA /* RemixSheetView.swift in Sources */,
+				48A8F95F2F9D928500583243 /* SemanticInterruptLabService.swift in Sources */,
+				48C125BE2EE14216004FB3FE /* RealtimeQuickService.swift in Sources */,
+				48E23EDB2EEE1113007E47EA /* VideoJobManager.swift in Sources */,
+				48E23F142F03650B007E47EA /* RemixFlowController.swift in Sources */,
+				484EC27C2F0AC13C006E764F /* RealtimeBridge.swift in Sources */,
+				48E23EF02EF3737B007E47EA /* PhotoSaveService.swift in Sources */,
+				489F3AF22F307EF1004E64C3 /* GPT5ChatService+Streaming.swift in Sources */,
+				48C125F42EE2B4EB004FB3FE /* VideoLibraryStore.swift in Sources */,
+				CF579707F9BD29DBDB73B833 /* ComputerControlPanel.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5C /* UnifiedTaskService.swift in Sources */,
+				BD1234567890ABCDEF00BD01 /* ComputerControlHomeView.swift in Sources */,
+				BD1234567890ABCDEF00CB01 /* ComputerBodyDebugView.swift in Sources */,
+				BD1234567890ABCDEF00AD01 /* AduTaskPlanner.swift in Sources */,
+				BD1234567890ABCDEF00CA01 /* CodexAgentClient.swift in Sources */,
+				BD1234567890ABCDEF00EA01 /* EngineeringAgentPanel.swift in Sources */,
+				BD1234567890ABCDEF00CS01 /* AduContextStore.swift in Sources */,
+				BD1234567890ABCDEF00SU01 /* AduSelfUpgradeClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48E23EBB2EED44CB007E47EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2026092500000000000001 /* GPT_SolaraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48E23EC42EED44CB007E47EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4812165A2ED642EF001D7D42 /* GPT Solara */;
+			targetProxy = 48E23EC32EED44CB007E47EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		481216642ED642F0001D7D42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		481216652ED642F0001D7D42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		481216672ED642F0001D7D42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 850F086F6C7A0CF6F07FA05E /* Pods-GPT Solara.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GPT Solara.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GPTsora/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatAGI-阿杜";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ChatAGI 需要使用摄像头进行视觉感知和视频通话。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "ChatAGI 需要访问联系人用于选择联系人和发起通讯相关功能。";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ChatAGI 需要使用当前位置来进行导航、感知和本地服务。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ChatAGI 需要使用麦克风进行语音通话。";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save the generated videos to your photo library so you can view and share them.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册，用于选择照片和视频生成内容。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We use speech recognition to convert your voice into text for video generation.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.duyuyong.GPTsora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		481216682ED642F0001D7D42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E491A1646451C50D0D251759 /* Pods-GPT Solara.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GPT Solara.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GPTsora/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "ChatAGI-阿杜";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ChatAGI 需要使用摄像头进行视觉感知和视频通话。";
+				INFOPLIST_KEY_NSContactsUsageDescription = "ChatAGI 需要访问联系人用于选择联系人和发起通讯相关功能。";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ChatAGI 需要使用当前位置来进行导航、感知和本地服务。";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "ChatAGI 需要使用麦克风进行语音通话。";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We need permission to save the generated videos to your photo library so you can view and share them.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问相册，用于选择照片和视频生成内容。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "We use speech recognition to convert your voice into text for video generation.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.duyuyong.GPTsora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		48E23EC62EED44CB007E47EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E823A63DA0FB28449EE9B946 /* Pods-GPT SolaraTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duyuyong.GPT-SolaraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPT Solara.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPT Solara";
+			};
+			name = Debug;
+		};
+		48E23EC72EED44CB007E47EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 900611AE85D01D828F9E4310 /* Pods-GPT SolaraTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.duyuyong.GPT-SolaraTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GPT Solara.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPT Solara";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		481216562ED642EF001D7D42 /* Build configuration list for PBXProject "GPTsora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481216642ED642F0001D7D42 /* Debug */,
+				481216652ED642F0001D7D42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481216662ED642F0001D7D42 /* Build configuration list for PBXNativeTarget "GPT Solara" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481216672ED642F0001D7D42 /* Debug */,
+				481216682ED642F0001D7D42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48E23EC52EED44CB007E47EA /* Build configuration list for PBXNativeTarget "GPT SolaraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48E23EC62EED44CB007E47EA /* Debug */,
+				48E23EC72EED44CB007E47EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48E23EF72EF5C7A9007E47EA /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 5.67.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48E23EF82EF5C7A9007E47EA /* ReceiptParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48E23EF72EF5C7A9007E47EA /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = ReceiptParser;
+		};
+		48E23EFA2EF5C7A9007E47EA /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48E23EF72EF5C7A9007E47EA /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+		48E23EFC2EF5C7A9007E47EA /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48E23EF72EF5C7A9007E47EA /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCatUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 481216532ED642EF001D7D42 /* Project object */;
+}

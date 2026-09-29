@@ -1,0 +1,341 @@
+<!doctype html>
+<!--
+GPTsora source provenance (metadata only; existing notices retained)
+Source-ID: "gptsora-1f744e24209d9bbcb494a7e9a818bb87a9bec51320b7588ae047f09772aa4bc9"
+Source-SHA256: "83b99df38f5ed3974ea271796dda65e943ff01e431e96e19f19c726ad37e8b7f"
+Owner: "YUYONG DU"
+License-Reference: "LicenseRef-GPTsora-Noncommercial-1.0; see LICENSE"
+Release-ID: "gptsora-source-2026-09-25"
+-->
+
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChatAGI Native Realtime POC</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f7f9;
+      color: #16181c;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    main {
+      width: min(760px, calc(100vw - 32px));
+      background: #fff;
+      border: 1px solid #e2e5ea;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 12px 40px rgba(20, 24, 33, 0.08);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: 650;
+      cursor: pointer;
+      background: #16181c;
+      color: #fff;
+    }
+    button.secondary {
+      background: #eef0f3;
+      color: #16181c;
+    }
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+    }
+    dl {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px 14px;
+      margin: 0;
+      font-size: 14px;
+    }
+    dt {
+      color: #68707d;
+    }
+    dd {
+      margin: 0;
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .log {
+      margin-top: 18px;
+      height: 180px;
+      overflow: auto;
+      border: 1px solid #e2e5ea;
+      border-radius: 8px;
+      padding: 10px;
+      background: #fafbfc;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    .error {
+      color: #b42318;
+      font-weight: 650;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Native Realtime POC</h1>
+    <div class="controls">
+      <button id="start">开始</button>
+      <button id="stop" class="secondary" disabled>停止</button>
+    </div>
+    <dl>
+      <dt>麦克风权限</dt><dd id="mic">未请求</dd>
+      <dt>WebSocket</dt><dd id="ws">未连接</dd>
+      <dt>音频片段</dt><dd id="chunks">0</dd>
+      <dt>result.text</dt><dd id="text">-</dd>
+      <dt>错误信息</dt><dd id="error" class="error">-</dd>
+    </dl>
+    <div id="log" class="log"></div>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const state = {
+      ws: null,
+      stream: null,
+      audioCtx: null,
+      source: null,
+      processor: null,
+      zeroGain: null,
+      chunkCount: 0,
+      pending: [],
+      playbackCtx: null,
+      playbackNextTime: 0,
+    };
+    const INPUT_RATE = 16000;
+    const CHUNK_SAMPLES = Math.round(INPUT_RATE * 0.25);
+
+    function log(line) {
+      $("log").textContent += `[${new Date().toLocaleTimeString()}] ${line}\n`;
+      $("log").scrollTop = $("log").scrollHeight;
+    }
+    function setError(message) {
+      $("error").textContent = message || "-";
+      if (message) log(`error: ${message}`);
+    }
+    function backendBase() {
+      if (location.port === "8000") return location.origin;
+      return `${location.protocol}//${location.hostname}:8000`;
+    }
+    function wsUrl(path) {
+      const url = new URL(path, backendBase());
+      url.protocol = url.protocol === "https:" ? "wss:" : "ws:";
+      return url.toString();
+    }
+    async function postJson(path, body) {
+      const res = await fetch(backendBase() + path, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body || {}),
+      });
+      const text = await res.text();
+      const data = text ? JSON.parse(text) : {};
+      if (!res.ok) throw new Error(data.message || data.reason || `HTTP ${res.status}`);
+      return data;
+    }
+    function resample(input, fromRate, toRate) {
+      if (fromRate === toRate) return new Float32Array(input);
+      const ratio = fromRate / toRate;
+      const out = new Float32Array(Math.max(1, Math.floor(input.length / ratio)));
+      for (let i = 0; i < out.length; i += 1) {
+        const pos = i * ratio;
+        const left = Math.floor(pos);
+        const right = Math.min(input.length - 1, left + 1);
+        const frac = pos - left;
+        out[i] = input[left] + (input[right] - input[left]) * frac;
+      }
+      return out;
+    }
+    function floatTo16BitPCM(samples) {
+      const bytes = new Uint8Array(samples.length * 2);
+      const view = new DataView(bytes.buffer);
+      for (let i = 0; i < samples.length; i += 1) {
+        const s = Math.max(-1, Math.min(1, samples[i] || 0));
+        view.setInt16(i * 2, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+      }
+      return bytes;
+    }
+    function bytesToBase64(bytes) {
+      let binary = "";
+      for (let i = 0; i < bytes.length; i += 0x8000) {
+        binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+      }
+      return btoa(binary);
+    }
+    function base64ToBytes(b64) {
+      const bin = atob(b64);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i += 1) bytes[i] = bin.charCodeAt(i);
+      return bytes;
+    }
+    function isWave(bytes) {
+      return bytes.length >= 12
+        && String.fromCharCode(...bytes.subarray(0, 4)) === "RIFF"
+        && String.fromCharCode(...bytes.subarray(8, 12)) === "WAVE";
+    }
+    async function playAudioData(b64, format) {
+      const bytes = base64ToBytes(b64);
+      if (!bytes.length) return;
+      if (format === "mp3" || isWave(bytes)) {
+        const type = format === "mp3" ? "audio/mpeg" : "audio/wav";
+        const url = URL.createObjectURL(new Blob([bytes], { type }));
+        const audio = new Audio(url);
+        audio.onended = () => URL.revokeObjectURL(url);
+        audio.onerror = () => URL.revokeObjectURL(url);
+        await audio.play().catch(() => {});
+        return;
+      }
+      if (bytes.byteLength % 4 !== 0) return;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      const ctx = state.playbackCtx || new Ctor({ sampleRate: 24000 });
+      state.playbackCtx = ctx;
+      const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+      const samples = new Float32Array(bytes.byteLength / 4);
+      for (let i = 0; i < samples.length; i += 1) samples[i] = view.getFloat32(i * 4, true);
+      const buffer = ctx.createBuffer(1, samples.length, 24000);
+      buffer.copyToChannel(samples, 0);
+      const src = ctx.createBufferSource();
+      src.buffer = buffer;
+      src.connect(ctx.destination);
+      const now = ctx.currentTime + 0.03;
+      const when = Math.max(now, state.playbackNextTime || now);
+      state.playbackNextTime = when + buffer.duration;
+      src.start(when);
+    }
+    function send(event) {
+      if (!state.ws || state.ws.readyState !== WebSocket.OPEN) return false;
+      state.ws.send(JSON.stringify(event));
+      return true;
+    }
+    function flushChunk(samples) {
+      const audio = bytesToBase64(floatTo16BitPCM(samples));
+      state.chunkCount += 1;
+      $("chunks").textContent = String(state.chunkCount);
+      send({ type: "input_audio_buffer.append", audio, sample_rate: INPUT_RATE, format: "pcm16" });
+    }
+    function startCapture() {
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      state.audioCtx = new Ctor();
+      state.source = state.audioCtx.createMediaStreamSource(state.stream);
+      state.processor = state.audioCtx.createScriptProcessor(4096, 1, 1);
+      state.zeroGain = state.audioCtx.createGain();
+      state.zeroGain.gain.value = 0;
+      state.processor.onaudioprocess = (event) => {
+        const input = event.inputBuffer.getChannelData(0);
+        const mono16 = resample(input, state.audioCtx.sampleRate, INPUT_RATE);
+        for (let i = 0; i < mono16.length; i += 1) state.pending.push(mono16[i]);
+        while (state.pending.length >= CHUNK_SAMPLES) {
+          flushChunk(new Float32Array(state.pending.splice(0, CHUNK_SAMPLES)));
+        }
+      };
+      state.source.connect(state.processor);
+      state.processor.connect(state.zeroGain);
+      state.zeroGain.connect(state.audioCtx.destination);
+    }
+    function cleanup() {
+      try { state.processor && state.processor.disconnect(); } catch {}
+      try { state.source && state.source.disconnect(); } catch {}
+      try { state.zeroGain && state.zeroGain.disconnect(); } catch {}
+      try { state.audioCtx && state.audioCtx.close(); } catch {}
+      try { state.playbackCtx && state.playbackCtx.close(); } catch {}
+      if (state.stream) state.stream.getTracks().forEach((track) => track.stop());
+      try { state.ws && state.ws.close(); } catch {}
+      state.ws = null;
+      state.stream = null;
+      state.audioCtx = null;
+      state.source = null;
+      state.processor = null;
+      state.zeroGain = null;
+      state.playbackCtx = null;
+      state.playbackNextTime = 0;
+      state.pending = [];
+      $("start").disabled = false;
+      $("stop").disabled = true;
+    }
+    async function start() {
+      setError("");
+      $("start").disabled = true;
+      $("stop").disabled = false;
+      state.chunkCount = 0;
+      $("chunks").textContent = "0";
+      $("text").textContent = "-";
+      try {
+        const session = await postJson("/api/realtime/native/session", { source: "native-poc" });
+        log(`session ${session.session_id} ready=${session.ready}`);
+        $("mic").textContent = "请求中";
+        state.stream = await navigator.mediaDevices.getUserMedia({
+          audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+        });
+        $("mic").textContent = "已授权";
+        state.ws = new WebSocket(wsUrl(session.ws_url));
+        $("ws").textContent = "连接中";
+        state.ws.onopen = () => {
+          $("ws").textContent = "已连接";
+          send({
+            type: "session.update",
+            config: { instructions: session.instructions || "你是 ChatAGI 阿杜实时语音模型，请用自然、简洁的中文回答。" },
+          });
+          send({ type: "mic_start" });
+          startCapture();
+        };
+        state.ws.onmessage = (event) => {
+          log(event.data);
+          let msg = {};
+          try { msg = JSON.parse(event.data); } catch {}
+          if (msg.type === "result.text") $("text").textContent = msg.text || "";
+          if (msg.type === "result.audio_data" && msg.audio) playAudioData(msg.audio, msg.format);
+          if (msg.type === "error") setError(msg.message || "实时语音错误");
+        };
+        state.ws.onerror = () => {
+          $("ws").textContent = "错误";
+          setError("WebSocket 连接失败");
+        };
+        state.ws.onclose = () => {
+          $("ws").textContent = "已断开";
+        };
+      } catch (err) {
+        const message = err && err.name === "NotAllowedError" ? "麦克风权限未开启" : (err.message || "启动失败");
+        $("mic").textContent = message.includes("麦克风") ? "未授权" : $("mic").textContent;
+        setError(message);
+        cleanup();
+      }
+    }
+    function stop() {
+      if (state.pending.length) flushChunk(new Float32Array(state.pending.splice(0, state.pending.length)));
+      send({ type: "end_of_turn" });
+      send({ type: "session.queue_done" });
+      send({ type: "stop" });
+      cleanup();
+    }
+    $("start").addEventListener("click", start);
+    $("stop").addEventListener("click", stop);
+  </script>
+</body>
+</html>

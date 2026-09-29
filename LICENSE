@@ -1,0 +1,174 @@
+GPTsora Noncommercial Source License 1.0
+License identifier: LicenseRef-GPTsora-Noncommercial-1.0
+Copyright (c) 2026 YUYONG DU and the identified contributors.
+
+This is a custom, noncommercial, source-available license. It is not the
+GNU AGPL, and it is not an OSI-approved open-source license.
+
+1. Definitions and scope
+
+"Licensor" means each copyright holder who has the authority to offer their
+material under this License. "You" means an individual or legal entity
+exercising the permissions in this License.
+
+"Covered Material" means the GPTsora source code, documentation, assets,
+and modifications explicitly offered under this License. In an official
+release, SOURCE_PROVENANCE.json identifies first-party files covered by
+this License. Separate copyright and license notices remain effective.
+This License does not replace the licenses of third-party components or
+give the Licensor rights they do not own. Mere inclusion in a directory
+does not transfer anyone else's copyright.
+
+"Modified Work" means Covered Material that You modify, adapt, translate,
+or incorporate into a work that is derivative of the Covered Material
+under applicable copyright law. Independent works merely aggregated with
+Covered Material are not automatically Modified Works.
+
+"Commercial Use" means any use intended for, directed toward, or undertaken
+in connection with commercial advantage, monetary compensation, or business
+operations. It includes selling, licensing for payment, commercial hosting
+or SaaS, customer or client work, paid products or services, advertising,
+sponsorship, promotion, commercial integration, and internal business use.
+Providing something free of charge, publishing its source, operating at a
+loss, or using a nonprofit entity does not by itself make a commercial
+purpose noncommercial. Personal, noncommercial study or experimentation
+does not become Commercial Use solely because You pay ordinary equipment,
+hosting, or third-party API costs for that personal activity.
+
+"Corresponding Source" means the preferred form for modifying all Covered
+Material and its covered Modified Works in the version You provide. It
+includes Your covered changes and the source files, build scripts,
+dependency declarations and available lock files, configuration templates,
+and installation instructions needed to understand, modify, and build that
+version. It does not require disclosure of private keys, passwords, personal
+data, or independent works. Use safe configuration templates for secrets.
+For separately licensed dependencies, provide their required notices and
+source or reproducible retrieval instructions as their licenses require.
+
+2. Noncommercial permission
+
+Subject to this License, each Licensor grants You a worldwide, royalty-free,
+nonexclusive permission under their copyright to use, reproduce, study,
+modify, display, perform, and distribute their Covered Material and Modified
+Works solely for noncommercial purposes. This grant lasts for the duration
+of the applicable copyright unless terminated under section 8.
+
+To the extent a Licensor owns or controls patent claims necessarily
+infringed by their contribution as supplied, that Licensor also grants a
+nonexclusive, royalty-free patent license to exercise the noncommercial
+permissions above. This does not cover claims infringed only by Your own
+additions or combinations. No other patent rights are granted.
+
+3. Any Commercial Use requires prior written approval
+
+No Commercial Use is permitted under this License. Before any Commercial
+Use, You must obtain a separate written authorization from the holder or
+holders of the relevant rights. Its scope, duration, fees, if any, and other
+conditions are governed by that separate agreement. Silence, a submitted
+request, payment to a model/API provider, source publication, or compliance
+with the noncommercial terms is not commercial approval.
+
+YUYONG DU may authorize only rights that YUYONG DU owns or is expressly
+authorized to license. Commercial authorization for this project cannot
+waive another contributor's or third party's rights without their authority.
+
+4. Source sharing when distributing or providing a network service
+
+When You provide Covered Material or a Modified Work to others, whether as
+source, a binary, an application, or another form, You must give each
+recipient the complete Corresponding Source under this License, together
+with this License and the required notices. Supply it with the work or
+through a clearly identified, freely accessible download at no additional
+charge. The source must match the version provided. If using a download,
+keep it available for at least three years after Your last distribution of
+that version, and give recipients a copy on request during that period.
+
+If You operate Covered Material or a Modified Work for users to interact
+with over a network, You must prominently offer every such user the complete
+Corresponding Source of the version in use, under this License and at no
+additional charge, through an accessible link in the service interface or
+API documentation. This condition applies to both modified and unmodified
+versions. Keep the matching source available while operating that version
+and for at least three years afterward. A Commercial Use of any network
+service still requires the prior written authorization in section 3.
+
+You must license Your covered modifications under this same License when
+these sharing conditions apply. Do not impose additional restrictions or
+technical measures that prevent recipients from exercising the permissions
+this License grants. Recipients receive their license to the original
+Covered Material directly from its Licensors. Source sharing gives no
+recipient permission for Commercial Use.
+
+5. Attribution, license notices, and provenance watermarks
+
+Preserve copyright notices, this License, applicable third-party notices,
+and identifiable GPTsora source and provenance notices. Identify Your
+modifications and their dates, and do not represent a modified release as
+an unmodified official release.
+
+Source comments and SOURCE_PROVENANCE.json are provenance watermarks.
+Retain the original attribution and provenance records in distributed
+source, identifying changed files and adding Your own records as needed.
+Normal formatting, compilation, bundling, and format conversion are allowed;
+if a format cannot retain a comment, preserve its information in an
+accompanying notice or provenance manifest and in Corresponding Source.
+Do not falsely alter authorship, source identity, or license attribution.
+
+These records support comparison with a known release. They do not promise
+unremovable marks, identification of every user or copy, or remote tracking.
+This License requires no telemetry or collection of personal information.
+
+6. Third-party rights and trademarks
+
+Third-party material remains under its own license. Nothing in this License
+restricts rights independently granted to You under that separate license.
+Comply with all applicable third-party notices and obligations. If a proposed
+combination cannot satisfy both this License and a third-party license,
+this License does not authorize that combination; obtain the necessary
+permissions before distributing or using it.
+
+No trademark, endorsement, or right to impersonate the project, its authors,
+or its services is granted. Factual attribution remains allowed. Nothing
+here limits exceptions, limitations, or rights that applicable law grants
+You without permission.
+
+7. Contributions and license versions
+
+A contribution explicitly submitted for inclusion under this License is
+offered under this License only to the extent its contributor has the
+necessary rights. This is not a copyright assignment and does not itself
+authorize the project owner to relicense that contribution commercially.
+Any such authority requires a separate express grant from the contributor.
+Third-party material must be identified and retain its original license.
+
+This License is version 1.0. Publication of another version does not
+automatically replace this License for a copy You lawfully received.
+
+8. Termination
+
+Your permissions under this License terminate automatically if You violate
+its conditions. If You cease the violation and fully cure it within 30 days
+of Your first written notice from the relevant Licensor, Your permissions
+from that Licensor are reinstated, unless You previously received such a
+notice and cure opportunity for a violation of this License. A cure does
+not retroactively authorize Commercial Use or waive claims for a prior
+violation. Otherwise, reinstatement requires that Licensor's written consent.
+Termination of Your permissions does not terminate a compliant recipient's
+independently granted permissions.
+
+9. Disclaimer and limitation of liability
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, COVERED MATERIAL IS PROVIDED
+"AS IS", WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NONINFRINGEMENT. YOU ARE RESPONSIBLE FOR EVALUATING AND USING IT.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, NO LICENSOR OR CONTRIBUTOR IS
+LIABLE FOR ANY CLAIM, DAMAGE, OR OTHER LIABILITY ARISING FROM THIS LICENSE
+OR THE COVERED MATERIAL, WHETHER IN CONTRACT, TORT, OR OTHERWISE. Nothing
+excludes or limits liability that applicable law does not allow to be
+excluded or limited.
+
+If a provision is unenforceable, the remaining provisions remain effective
+to the extent permitted by law. No additional permissions arise from an
+unenforceable restriction beyond those required by applicable law.
